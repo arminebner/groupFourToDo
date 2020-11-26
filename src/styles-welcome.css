@@ -26,3 +26,19 @@
 .headLine {
    font-size: 4rem;
 }
+
+.avatar {
+   margin-bottom: 2rem;
+}
+
+.button-container {
+   padding: 1rem;
+   border-radius: 5px;
+   text-shadow: -2px 2px 5px rgba(0, 0, 0, 0.335);
+   background-color: #25557c;
+}
+
+.nav-link {
+   color: #fff;
+   text-decoration: none;
+}
