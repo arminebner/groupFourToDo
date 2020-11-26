@@ -1,0 +1,28 @@
+* {
+   padding: 0;
+   margin: 0;
+   box-sizing: border-box;
+}
+
+.main-wrapper {
+   width: 30%;
+   margin: 0 auto;
+}
+
+.content {
+   position: absolute;
+   top: 50%;
+   transform: translateY(-50%);
+   padding: 2rem;
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   border-radius: 5px;
+   background-color: rgba(0, 0, 0, 0.205);
+   box-shadow: -5px 5px 10px rgba(0, 0, 0, 0.335);
+   font-family: 'Poppins', sans-serif;
+}
+
+.headLine {
+   font-size: 4rem;
+}

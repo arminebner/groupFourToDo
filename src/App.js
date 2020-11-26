@@ -1,18 +1,19 @@
-import React, { useState, useEffect } from "react";
-import { BrowserRouter as Router, NavLink, Switch} from 'react-router-dom'
+import { BrowserRouter as Router, Route, Switch} from 'react-router-dom'
+import Welcome from './components/Welcome'
+import Overview from './components/Overview'
 import './App.css';
-
-//Important components
-import Form from "./components/Form";
-import ToDoList from "./components/ToDoList";
 
 
 function App() {
 
   return (
     <>
-
-
+      <Router>
+        <Switch>
+          <Route exact path='/' component={Welcome}/>
+          <Route path='/overview' component={Overview}/>
+        </Switch>
+      </Router>
     </>
   );
 }
