@@ -1,5 +1,7 @@
 import React, { useState, useEffect } from "react";
+import { NavLink } from 'react-router-dom'
 import '../App.css';
+import '../styles-welcome.css';
 
 //Important components
 import Form from "./Form";
@@ -23,6 +25,7 @@ function Overview() {
 
   //Use effect
   useEffect(() => {
+    //saveToGlobalState
     filterHandler();
     saveLocalTodos();
   }, [todos, status]);
@@ -84,6 +87,9 @@ function Overview() {
       setTodos={setTodos} 
       todos={todos} />
 
+      <div className="button-container">
+          <NavLink className='nav-link' to='/' >start</NavLink>
+      </div>
     </div>
   );
 }

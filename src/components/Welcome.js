@@ -1,16 +1,21 @@
-import React from 'react'
+import React, { useEffect } from 'react'
 import { NavLink } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import happy from '../images/happy.svg'
-
-
 import '../styles-welcome.css';
 
 
 const Welcome = () => {
 
     let expression = 'Oh cool'
-    let counter = 0
 
+    useEffect(() => {
+       //use to get globalState when page loads
+    }, [])
+
+    const counter = useSelector(state => state.counterReducer)
+    console.log(counter);
+    
 
     return (
         <>

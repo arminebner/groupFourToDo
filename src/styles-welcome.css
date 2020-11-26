@@ -32,6 +32,7 @@
 }
 
 .button-container {
+   display: inline-block;
    padding: 1rem;
    border-radius: 5px;
    text-shadow: -2px 2px 5px rgba(0, 0, 0, 0.335);
@@ -41,4 +42,5 @@
 .nav-link {
    color: #fff;
    text-decoration: none;
+   padding: 1rem;
 }
