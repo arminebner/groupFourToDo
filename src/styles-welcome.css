@@ -6,14 +6,14 @@
 
 .main-wrapper {
    width: 30%;
+   height: 100vh;
    margin: 0 auto;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 .content {
-   position: absolute;
-   top: 50%;
-   left: 50%;
-   transform: translate(-50%, -50%);
    padding: 2rem;
    display: flex;
    flex-direction: column;
@@ -42,6 +42,8 @@
 .button-container-overview {
    width: 100px;
    margin: 0 auto;
+   background-color: #4cc5e4;
+   font-family: 'Poppins', sans-serif;
 }
 
 .nav-link {
