@@ -1,6 +1,5 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from 'react-router-dom'
-import { useSelector } from 'react-redux'
 import '../App.css';
 import '../styles-welcome.css';
 
@@ -16,9 +15,6 @@ function Overview() {
   const [todos, setTodos] = useState([]);
   const [status, setStatus] = useState("all");
   const [filteredTodos, setFilteredTodos] = useState([]);
-
-  //Redux Stuff
-  let global = useSelector(state => state)
 
 
   //Run once when the app start

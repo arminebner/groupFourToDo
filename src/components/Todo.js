@@ -1,9 +1,14 @@
 import React from 'react';
+import { useDispatch } from 'react-redux'
+import { decrement } from '../actions'
 
 const Todo = ({ text, todo, todos, setTodos }) => {
+
+    const dispatch = useDispatch()
     //Events
 
     const deleteHandler = () => {
+        dispatch(decrement())
         setTodos(todos.filter((el) => el.id !== todo.id));
     };
 

@@ -1,9 +1,13 @@
 import React from "react";
+import { useDispatch } from 'react-redux'
+import { increment } from '../actions'
 
 /*function Form(){}*/
 
 // main function with all ({ props })
 const Form = ({ setInputText, todos, setTodos, inputText, setStatus }) => {
+
+    const dispatch = useDispatch()
 
   //There I can write JS code and function
 
@@ -14,6 +18,7 @@ const Form = ({ setInputText, todos, setTodos, inputText, setStatus }) => {
 
     const submitTodoHandler = (e) => {
       e.preventDefault();
+      dispatch(increment())
       setTodos([
         ...todos, 
         { text: inputText, completed: false, id: Math.random() * 1000 },
