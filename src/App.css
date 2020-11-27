@@ -1,149 +1,149 @@
 * {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
 }
 
 body {
-  background-image: linear-gradient(120deg, #65f6bf 20%, #4cc5e4 80%);
-  color: white;
-  font-family: Georgia, 'Times New Roman', Times, serif;
-  min-height: 100vh;
+   background-image: linear-gradient(120deg, #65f6bf 20%, #4cc5e4 80%);
+   color: white;
+   font-family: Georgia, 'Times New Roman', Times, serif;
+   min-height: 100vh;
 }
 
 header {
-  color:  #f79090;
-  font-size: 1.3rem;
-  font-weight: 250;
+   color: #f79090;
+   font-size: 1.3rem;
+   font-weight: 250;
 }
 
 header,
 form {
-  padding-top: 50px;
-  min-height: 15vh;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+   padding-top: 50px;
+   min-height: 15vh;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 form input,
 form button {
-  padding: 0.5rem;
-  font-size: 2rem;
-  border: none;
-  background: white;
+   padding: 0.5rem;
+   font-size: 2rem;
+   border: none;
+   background: white;
 }
 
 form button {
-  color: #0fdceb;
-  background: #f7fffe;
-  cursor: pointer;
-  transition: all 0.3s ease;
+   color: #0fdceb;
+   background: #f7fffe;
+   cursor: pointer;
+   transition: all 0.3s ease;
 }
 
 form button:hover {
-  background: #0fdceb;
-  color: white;
+   background: #0fdceb;
+   color: white;
 }
 
 .todo-container {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+   display: flex;
+   justify-content: center;
+   align-items: center;
 }
 
 .todo-list {
-  min-width: 30%;
-  list-style: none;
+   min-width: 30%;
+   list-style: none;
 }
 
 .todo {
-  margin: 0.5rem;
-  background: white;
-  font-size: 1.5rem;
-  color: black;
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  transition: all 1s ease;
+   margin: 0.5rem;
+   background: white;
+   font-size: 1.5rem;
+   color: black;
+   display: flex;
+   justify-content: space-between;
+   align-items: center;
+   transition: all 1s ease;
 }
 
 .filter-todo {
-  padding: 1rem;
+   padding: 1rem;
 }
 
 .todo li {
-  flex: 1;
+   flex: 1;
 }
 
 .trash-btn,
 .complete-btn {
-  background: #204269;
-  color: white;
-  border: none;
-  padding: 1rem;
-  cursor: pointer;
-  font-size: 1rem;
+   background: #204269;
+   color: white;
+   border: none;
+   padding: 1rem;
+   cursor: pointer;
+   font-size: 1rem;
 }
 
 .complete-btn {
-  background: #0fdceb;
+   background: #0fdceb;
 }
 
 .todo-item {
-  padding: 0rem 0.5rem;
+   padding: 0rem 0.5rem;
 }
 
 .fa-trash,
 .fa-check {
-  pointer-events: none;
+   pointer-events: none;
 }
 
 .fall {
-  transform: translateY(10rem) rotateZ(20deg);
-  opacity: 0;
+   transform: translateY(10rem) rotateZ(20deg);
+   opacity: 0;
 }
 
 .completed {
-  text-decoration: line-through;
-  opacity: 0.5;
+   text-decoration: line-through;
+   opacity: 0.5;
 }
 
 /*CUSTOM SELECTOR */
 select {
-  -webkit-appearance: none;
-  -moz-appearance: none;
-  -ms-appearance: none;
-  appearance: none;
-  outline: 0;
-  box-shadow: none;
-  border: 0 !important;
-  background-image: none;
+   -webkit-appearance: none;
+   -moz-appearance: none;
+   -ms-appearance: none;
+   appearance: none;
+   outline: 0;
+   box-shadow: none;
+   border: 0 !important;
+   background-image: none;
 }
 
 /* Custom Select */
 .select {
-  margin: 1rem;
-  position: relative;
-  overflow: hidden;
+   margin: 1rem;
+   position: relative;
+   overflow: hidden;
 }
 select {
-  color: #0fdceb;
-  font-family: "Poppins", sans-serif;
-  cursor: pointer;
-  width: 12rem;
+   color: #0fdceb;
+   font-family: 'Poppins', sans-serif;
+   cursor: pointer;
+   width: 12rem;
 }
 
 /* Arrow */
 .select::after {
-  content: "\25BC";
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 1rem;
-  background: #0fdceb;
-  cursor: pointer;
-  pointer-events: none;
+   content: '\25BC';
+   position: absolute;
+   top: 0;
+   right: 0;
+   padding: 1rem;
+   background: #0fdceb;
+   cursor: pointer;
+   pointer-events: none;
 }
 /* Transition */
 /*
@@ -153,7 +153,7 @@ select {
 */
 
 .App {
-  background-image: url('./images/pexels-pratik-gupta.jpg');
-  min-height: 100vh;
-  background-size: cover;
+   background-image: url('./images/pexels-pratik-gupta.jpg');
+   min-height: 100vh;
+   background-size: cover;
 }

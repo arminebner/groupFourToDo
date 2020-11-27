@@ -84,7 +84,7 @@ function Overview() {
       setTodos={setTodos} 
       todos={todos} />
 
-      <div className="button-container">
+      <div className="button-container button-container-overview">
           <NavLink className='nav-link' to='/' >start</NavLink>
       </div>
     </div>
