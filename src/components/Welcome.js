@@ -27,36 +27,7 @@ const Welcome = () => {
             renderObj.expression = 'You suck. Your life sucks. Your dreams suck...'
         }
         return renderObj
-    }
-    
-
-
-    /* const renderImage = () => {
-        let image;
-        if (counter < 1) {
-            image = happy
-        }else if (counter <= 5) {
-            image = busy
-        }else {
-            image = angry
-        }
-        return image
-    }
-
-    const renderText = () => {
-        let expression;
-        if (counter < 1) {
-            expression = 'Awww Yeahhh!'
-        }else if (counter <= 5) {
-            expression = 'Alright - get to it:'
-        }else {
-            expression = 'You suck. Your life sucks. Your dreams suck...'
-        }
-        return expression
-    }     */
-      
-    
-    
+    }    
 
     return (
         <>
