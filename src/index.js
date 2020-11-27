@@ -7,9 +7,12 @@ import { createStore } from 'redux'
 import counterReducer from './reducers/index'
 import { Provider } from 'react-redux'
 
+let localSave = JSON.parse(localStorage.getItem('todos'))
+let initialState = localSave.length
+
 const store = createStore(
-  //can have 2nd argiument for importing local storage
   counterReducer,
+  initialState,
   window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
   )
 

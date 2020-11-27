@@ -7,7 +7,7 @@ import busy from '../images/busy.svg'
 import '../styles-welcome.css';
 
 
-const Welcome = () => {
+const Welcome = () => {    
 
     const counter = useSelector(state => state)
         
@@ -15,7 +15,7 @@ const Welcome = () => {
         let image;
         if (counter < 1) {
             image = happy
-        }else if (counter < 5) {
+        }else if (counter <= 5) {
             image = busy
         }else {
             image = angry
@@ -27,7 +27,7 @@ const Welcome = () => {
         let expression;
         if (counter < 1) {
             expression = 'Awww Yeahhh!'
-        }else if (counter < 5) {
+        }else if (counter <= 5) {
             expression = 'Alright - get to it:'
         }else {
             expression = 'You suck. Your life sucks. Your dreams suck...'
@@ -42,8 +42,9 @@ const Welcome = () => {
         <>
             <div className="main-wrapper">
                 <div className="content">
-                    <div className="headLine">Welcome back</div>
-                    <p className="text">{`${renderText()} You have ${counter} Tasks to do!`}</p>
+                    <div className="headLine">Welcome back!</div>
+                    <p className="text-upper">{`${renderText()}`}</p>
+                    <p className="text">You have <span>{counter}</span> Tasks to do!</p>
                     <img className='avatar' src={renderImage()} alt='welcome' />
                     <div className="button-container">
                         <NavLink className='nav-link' to='/overview' >see overview</NavLink>

@@ -1,5 +1,6 @@
 import React, { useState, useEffect } from "react";
 import { NavLink } from 'react-router-dom'
+import { useSelector } from 'react-redux'
 import '../App.css';
 import '../styles-welcome.css';
 
@@ -16,6 +17,9 @@ function Overview() {
   const [status, setStatus] = useState("all");
   const [filteredTodos, setFilteredTodos] = useState([]);
 
+  //Redux Stuff
+  let global = useSelector(state => state)
+
 
   //Run once when the app start
   useEffect(() => {
@@ -25,7 +29,6 @@ function Overview() {
 
   //Use effect
   useEffect(() => {
-    //saveToGlobalState
     filterHandler();
     saveLocalTodos();
   }, [todos, status]);
@@ -64,8 +67,6 @@ function Overview() {
       setTodos(todoLocal);
     }
   };
-
-
 
   return (
     <div className="App">
