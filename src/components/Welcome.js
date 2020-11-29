@@ -38,7 +38,7 @@ const Welcome = () => {
                     <p className="text">You have <span>{counter}</span> Tasks to do!</p>
                     <img className='avatar' src={renderDecision().image} alt='welcome' />
                     <div className="button-container">
-                        <NavLink className='nav-link' to='/overview' >see overview</NavLink>
+                        <NavLink className='nav-link' to='/groupFourToDo/overview'>see overview</NavLink>
                     </div>
                 </div>
             </div>
