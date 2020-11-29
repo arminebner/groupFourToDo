@@ -1,0 +1,26 @@
+{
+  "files": {
+    "main.css": "/groupFourToDo/static/css/main.88e5e102.chunk.css",
+    "main.js": "/groupFourToDo/static/js/main.7edc070b.chunk.js",
+    "main.js.map": "/groupFourToDo/static/js/main.7edc070b.chunk.js.map",
+    "runtime-main.js": "/groupFourToDo/static/js/runtime-main.7d0c59d7.js",
+    "runtime-main.js.map": "/groupFourToDo/static/js/runtime-main.7d0c59d7.js.map",
+    "static/js/2.9c5c5f25.chunk.js": "/groupFourToDo/static/js/2.9c5c5f25.chunk.js",
+    "static/js/2.9c5c5f25.chunk.js.map": "/groupFourToDo/static/js/2.9c5c5f25.chunk.js.map",
+    "static/js/3.5eecc751.chunk.js": "/groupFourToDo/static/js/3.5eecc751.chunk.js",
+    "static/js/3.5eecc751.chunk.js.map": "/groupFourToDo/static/js/3.5eecc751.chunk.js.map",
+    "index.html": "/groupFourToDo/index.html",
+    "static/css/main.88e5e102.chunk.css.map": "/groupFourToDo/static/css/main.88e5e102.chunk.css.map",
+    "static/js/2.9c5c5f25.chunk.js.LICENSE.txt": "/groupFourToDo/static/js/2.9c5c5f25.chunk.js.LICENSE.txt",
+    "static/media/angry.58a76ddd.svg": "/groupFourToDo/static/media/angry.58a76ddd.svg",
+    "static/media/busy.f0c2ee01.svg": "/groupFourToDo/static/media/busy.f0c2ee01.svg",
+    "static/media/happy.b46ec01c.svg": "/groupFourToDo/static/media/happy.b46ec01c.svg",
+    "static/media/App.css": "/groupFourToDo/static/media/pexels-pratik-gupta.2c37a6c9.jpg"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.7d0c59d7.js",
+    "static/js/2.9c5c5f25.chunk.js",
+    "static/css/main.88e5e102.chunk.css",
+    "static/js/main.7edc070b.chunk.js"
+  ]
+}
