@@ -86,7 +86,7 @@ function Overview() {
       todos={todos} />
 
       <div className="button-container button-container-overview">
-          <NavLink className='nav-link' to='/' >start</NavLink>
+          <NavLink className='nav-link' to='/groupFourToDo' >start</NavLink>
       </div>
     </div>
   );
