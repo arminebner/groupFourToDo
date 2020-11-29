@@ -7,8 +7,18 @@ import { createStore } from 'redux'
 import counterReducer from './reducers/index'
 import { Provider } from 'react-redux'
 
-let localSave = JSON.parse(localStorage.getItem('todos'))
-let initialState = localSave.length
+let initialState = 0
+
+const setInitialState = () => {
+  let localSave = JSON.parse(localStorage.getItem('todos'))
+  initialState = localSave.length
+  return initialState
+}
+
+if (JSON.parse(localStorage.getItem('todos'))) {
+  setInitialState()
+}
+
 
 const store = createStore(
   counterReducer,
