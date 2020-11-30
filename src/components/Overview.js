@@ -11,10 +11,10 @@ import ToDoList from "./ToDoList";
 function Overview() {
 
   //State stuff
-  const [inputText, setInputText] = useState("");
-  const [todos, setTodos] = useState([]);
-  const [status, setStatus] = useState("all");
-  const [filteredTodos, setFilteredTodos] = useState([]);
+  const [inputText, setInputText] = useState(""); // Having text state
+  const [todos, setTodos] = useState([]); // For adding functionality, having text ==> completed, true or false, with a specific id to identify the todo
+  const [status, setStatus] = useState("all"); // For filtering todos based on status, "all" ==> default status
+  const [filteredTodos, setFilteredTodos] = useState([]); // Updating the todos, setTodos with the filtering system
 
 
   //Run once when the app start
@@ -23,19 +23,19 @@ function Overview() {
   }, []);
 
 
-  //Use effect
+  //Use effect, runs the function everytime a piece of state changes
   useEffect(() => {
     filterHandler();
     saveLocalTodos();
   // eslint-disable-next-line react-hooks/exhaustive-deps
-  }, [todos, status]);
+  }, [todos, status]); // [] arrow function is gonna run only once when the component is first rendered
 
 
   //Functions
   const filterHandler = () => {
     switch(status){
       case 'completed':
-        setFilteredTodos(todos.filter(todo => todo.completed === true));
+        setFilteredTodos(todos.filter(todo => todo.completed === true)); // Check if the todo is completed
         break;
       case 'uncompleted':
         setFilteredTodos(todos.filter(todo => todo.completed === false));

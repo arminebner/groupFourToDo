@@ -11,17 +11,19 @@ const Form = ({ setInputText, todos, setTodos, inputText, setStatus }) => {
 
   //There I can write JS code and function
 
+    //Function for the text we enter in the input form
     const inputTextHandler = (e) => {
       console.log(e.target.value);
-      setInputText(e.target.value);
+      setInputText(e.target.value); //Data to update the state
     };
 
+    //For submitting the text when typing "enter" or the "+" icon to add a todo
     const submitTodoHandler = (e) => {
-      e.preventDefault();
+      e.preventDefault(); // To prevent refreshing the page when typing enter or the "+" icon
       dispatch(increment())
       setTodos([
-        ...todos, 
-        { text: inputText, completed: false, id: Math.random() * 1000 },
+        ...todos, // For passing todos
+        { text: inputText, completed: false, id: Math.random() * 1000 }, // For passing new todos with an id
       ]);
       setInputText("");
     };
@@ -33,7 +35,9 @@ const Form = ({ setInputText, todos, setTodos, inputText, setStatus }) => {
     
     return(
         <form>
+
         <input value={inputText} onChange={inputTextHandler} type="text" className="todo-input" />
+        {/*Everytime the input changes the function will run*/}
 
         <button onClick={submitTodoHandler} className="todo-button" type="submit">
           <i className="fas fa-plus-square"></i>
