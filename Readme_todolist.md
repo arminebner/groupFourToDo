@@ -1,105 +1,138 @@
 To-Do-List construction order.
 
+
+// REACT PROJECT FILES PREPARATION
+
+
 To get started, delete in App.js:
 - <header>
 - import logo
+
 Else to be deleted:
 - Logo.svp
 - App.test.css
 - setupTests.js
+
 To be emptied:
 - #App.css
+- setup the doc with own css after that
 
+In index.html:
+- almost nothing to do except eventually add a font with <link></link> after meta
 
-1 - already existing App.css ? If yes applying it.
-2 - in index.html, almost nothing to do except eventually add font with <link></link> after meta
+Create new folder "components" in src folder and create 2 new files inside it:
+- Form.js
+-ToDoList.js
 
-3 - Create new folder "components" in src folder and create 2 new files inside it:
-    - Form.js
-    - ToDoList.js
+In App.js, adding: "import React, { useState } from "react";"
+==> UI & React update based on state
 
-4 - in App.js, adding: "import React, { useState } from "react";"
-    ==> UI & React update based on state
+//GOAL: GET TODOS & INPUT & WHAT WE USE IN THE WEB APP INTO STATE.
+        ONCE IN STATE: THE UI WILL REACT TO THE CHANGES: 
+
+// CREATING BASIC FUNCTION COMPONENTS: const Form, const TodoList
+
 
     Form.js:
 
-5   in "const Form" and after "return", enter the <form></form> HTML
+1   Create COMPONENT ***const Form and after "return", enter the JSX <form></form>
     import React & export default Form at the end of the file
     no class ==> only "className" (ctrl + F & v replace with className)
 
-6 - Create FIRST variable:
-    const inputTextHandler = (e) => {
-    console.log(e.target.value);
-    setInputText(e.target.value);}; ==> setting event for inputTextHandler & setInputText
-
     ToDoList.js:
 
-7 - create a new component const ToDoList & return <div> HTML & "Export default ToDoList"
+2 - Create COMPONENT ***const ToDoList & return JSX & "Export default ToDoList"
 
     App.js
 
-8 - Enter both const components <Form /> & <TodoList /> after <header>
+3 - Enter both function components <Form /> & <TodoList /> in JSX after <header> ==> LIFTING UP THE STATE TO PARENT COMPOSENT APP!!
 
 Files are structured
-==> Getting what we type in the input bar into a piece of STATE, therefore enter: 
-const [inputText, setInputText] = useState(""); // will be reset everytime
+
+
+
+// ENTERING JS EVENT FUNCTIONS IN FORM
+// ADDING EVENTS IN JSX INPUT
+// APP: PASSING DOWN STATE SETTER setInputText AS PROPS IN JSX FORM
+
+
+
+4 - Getting what we type in the input bar into a piece of STATE, therefore enter: 
+    const [inputText, setInputText] = useState(""); // 1st & 2nd props, will be reset everytime
 
     Form.js:
 
-9 - Enter component:      const inputTextHandler = (e) => {
+5 - Enter JS FUNCTION:  **const inputTextHandler = (e) => {
                           console.log(e.target.value);
-                          setInputText(e.target.value);
-                          }; //setInputText ==> 1st props
+                          setInputText(e.target.value); //setting EVENT for inputTextHandler & setInputText
+                          };
 
-How to add events? In <form> ==> <input value={inputText} onChange={inputTextHandler} type="text" className="todo-input" />
-Every time the input changes, the const runs.
+6 - Adding events: In <form> ==> <input value={inputText} onChange={inputTextHandler} type="text" className="todo-input" />
+    Every time the input changes, the function runs.
 
     App.js
 
-10 - Passing down setInputText updating inputText ==>   in function App() {
-                                                        const [inputText, setInputText] = useState("");
-                                                        <Form setInputText={setInputText} />
+7 - Passing down [setInputText] updating inputText in <Form /> component ==> in function App() {
+                                                                            const [inputText, setInputText] = useState("");
+                                                                            <Form setInputText={setInputText} />
 
-==>For storing todos & adding functionality enter a new piece of STATE ==>    const [todos, setTodos] = useState([]); 
-//[] because we ll enter an arry of objects
+
+
+//APP: NEW PIECE OF STATE FOR STORING TO-DOS TASKS AND FUNCTIONALITY
+//APP: PASSING DOWN STATE todos, setTodos, inputText AS PROPS IN JSX FORM & TODOLIST
+
+
+
+8 - For storing todos & adding functionality enter a new piece of STATE ==>   ***const [todos, setTodos] = useState([]); 
+//[] array of objects
 
     Form.js:
 
-11 - Enter component:     const submitTodoHandler = (e) => {
+9 - Enter JS FUNCTION: **const submitTodoHandler = (e) => {
                           e.preventDefault();
 
-And returning it in <form><button onClick={submitTodoHandler} className="todo-button" type="submit">
+    And returning it in <form><button onClick={submitTodoHandler} className="todo-button" type="submit">
 
-12 - Passing down the props "todos" and "setTodos" in <Form todos={todos} setTodos={setTodos} /> App.js
-    Importing the props in const Form ({}) after setInputText. // todos & setTodos the 2nd and 3rd props
+    App.js:
 
-    Adding setTodos object in const submitTodoHandler and ...passing the todos: 
+10 - Passing down the STATES [todos, setTodos] in component <Form todos={todos} setTodos={setTodos} /> App.js
+                                                            <ToDoList todos={todos} setTodos={setTodos} /> App.js
+
+    Importing the props in ***const Form ({}) after setInputText and in ***const ToDoList ({}). 
+    // todos & setTodos the 3rd and 4th props
+
+    Form.js:
+
+11 - Adding setTodos object in const submitTodoHandler and ...passing the todos: 
     { text: inputText, completed: false, id: Math.random() * 1000 } // gives a random id for the example, if not building a package.
     Updating "setInputText" right below with ("");
 
-But "inputText" to be defined: passing down the props in <Form inputText={inputText} /> App.js and importing it in const Form ({})
-// inputText ==> 4th props
+    But "inputText" to be defined: passing down the STATE in <Form inputText={inputText} /> App.js and importing it in ***const Form ({})
+    // inputText ==> 1st props
 
-Updating UI with the state, setting a value={inputText} in <form><input>
+    Setting a value to the input text to keep in check with the UI, setting a value={inputText} in <form><input>
 
 
 FIRST PART FINISHED
 
 
-==> Create the HTML, JSX to display what we have in the todos in our state
+//DISPLAYING EACH TODO INPUT WITH INPUT BAR AND BUTTONS IN THE UI/STATE
+//CREATING NEW FUNCTION COMPONENT: const Todo in new doc Todo.js
+
+==> Creating the JSX to display what we have in the todos in our state, with component Todo in parent TodoList
 
 
-13 - Create new doc Todo.js ==> for displaying the Todo's input bars with buttons
+12 - Create new doc Todo.js ==> for displaying the Todo's input bars with buttons & styling
 
     TodoList.js:
 
-14 - const TodoList parent component of new component Todo
+13 - const TodoList parent component of new component Todo
      Create a new <Todo /> in const TodoList in <ul></ul>
      Import Todo from './Todo';
 
     Todo.js:
 
-15 - Create a new const Todo = () => {}; & exporting it
+14 - Create a new const Todo = () => {}; & exporting it
      Addign the JSX: 
      return(
         <div className="todo">
@@ -114,19 +147,23 @@ FIRST PART FINISHED
         );
     
 Problem: it doesn't react to the state yet.
-==> having Piece of state with the Todos in the TodoList
 
-    App.js:
 
-16 - Passing down the props todos in <TodoList todos={todos} />
-     Passing the props todos as argument in const TodoList
 
-==> Maping though it, for each object we can render a Todo component
+//HAVING TODO & TODOLIST COMPONENTS FUNCTIONAL
+
+
+
+    Todo.js:
+
+==> Maping though the array of objects, for each object we can render a Todo component
     Having access to each todo: {todos.map((todo) => ())}
     For each Todo from the state that we have ==> render out a Todo component
 
-17 - Passing down a text props to <Todo /> ==> text={todo.text}
-     Passing the props "text" in the as an attribute of component const Todo ({})
+    ToDoList.js:
+
+15 - Passing down a text props to <Todo /> ==> text={todo.text}
+     Passing the props "text" as an attribute of component const Todo ({})
      ==> the text we enter in the main input bar is given in a Todo input bar:
      TodoList
      Todo
@@ -134,21 +171,23 @@ Problem: it doesn't react to the state yet.
      Todo
      etc.
 
-18 - Passing a key props to <Todo /> ==> key={todo.id} 
+16 - Passing a key props to <Todo /> ==> key={todo.id} for identifying every item in the list
 
-19 - Adding todos={todos} & setTodos={setTodos} in <TodoList /> App.js so as in <Todo /> in const TodoList TodoList.js.
-     Adding these props as arguments in const Todo ({}) Todo.js and const TodoList ({}) as well.
-     Adding the props todo in const Todo ({}) and in <Todo /> in const TodoList TodoList.js.
+17 - Adding setTodos={setTodos} in <TodoList /> App.js so as in <Todo /> in ***const TodoList TodoList.js.
+     Adding these props as arguments in **const Todo ({}) Todo.js and **const TodoList ({}) as well.
+     Adding the props todo in **const Todo ({}) and in <Todo /> in **const TodoList TodoList.js.
 
 
-IMPLEMENTING THE DELETE AND CHECK BUTTONS
+
+//IMPLEMENTING THE DELETE AND CHECK BUTTONS
+
 
 
     Todo.js:
 
-20 - Adding events: setting a const deleteHandler & a const completeHandler = () => {}; and doing checks.
+18 - Adding events: setting a const deleteHandler & a const completeHandler = () => {}; and doing checks.
 
-21 - To update the UI ==> passing these events in the Todo.js JSX as "onClick" attributes and adding classNames:
+19 - To update the UI ==> passing these events in the Todo.js JSX as "onClick" attributes and adding classNames:
 
 return(
         <div className="todo">
@@ -164,36 +203,39 @@ return(
 
 
 
-HAVING THE FILTERING SYSTEM WORK
+
+//HAVING THE FILTERING SYSTEM WORKING
+
+
 
     App.js:
 
-22 - Create a new piece of STATE for filtering todos status: const [status, setStatus] = useState("all");
+20 - Create a new piece of STATE for filtering todos status: **const [status, setStatus] = useState("all");
      Changing based on: ALL, COMPLETED, UNCOMPLETED
 
-23 - Passing the state down to <Form /> App.js: setStatus={setStatus} and importing it in const Form ({})
+21 - Passing the state down to <Form /> App.js: setStatus={setStatus} and importing it in const Form ({})
     //setStatus ==> 5th props
 
     Form.js:
 
-24 - Create a new function:     const statusHandler = (e) => {
+22 - Create a new function:     const statusHandler = (e) => {
                                 setStatus(e.target.value);
                                 };
 
-25 - Passing it down in:        <div className="select">
+23 - Passing it down in:        <div className="select">
                                     <select onChange={statusHandler} name="todos" className="filter-todo">
                                     //Event each time an item in the filter is clicked
 
-26 - Saving the state as a props {setStatus} in const Form ({})
+24 - Saving the state as a props {setStatus} in const Form ({})
 
     App.js:
 
-27 - Create a new piece of STATE for filter: const [filteredTodos, setFilteredTodos] = useState([]);
+25 - Create a new piece of STATE for filter: ***const [filteredTodos, setFilteredTodos] = useState([]);
 
-28 - Create a new function:     const filterHandler = () => {}
+26 - Create a new function:     const filterHandler = () => {}
                                 Add cases 'completed' 'uncomplited', 'default'
 
-29 - Add {useEffect} after {useState} and create a new function:    useEffect(() => {
+27 - Add {useEffect} after {useState} and create a new function:    useEffect(() => {
                                                                     filterHandler();
                                                                     saveLocalTodos();
                                                                     }, [todos, status]);
@@ -204,19 +246,22 @@ HAVING THE FILTERING SYSTEM WORK
 ==> Works in the console but not updated yet in the UI & state
 ==> We use <Todo /> to render each todo
 
-30 - Passing the state filteredTodos down to <toDoList /> App.js: filteredTodos={filteredTodos} and importing it in const ToDoList ({})
+28 - Passing the state filteredTodos down to <toDoList /> App.js: filteredTodos={filteredTodos} and importing it in const ToDoList ({})
      Mapping it in the component function
 
 
-PUSHING & SAVING THE TODOS IN LOCAL STORAGE
+
+//PUSHING & SAVING THE TODOS IN LOCAL STORAGE
 
 
-31 - Create a new function: const saveLocalTodos = () => {}
+
+29 - Create a new function: const saveLocalTodos = () => {}
      // check if localStorage has todos inside
      Adding the function saveLocalTodos(); in the useEffect function
 
-32 - Create a new function: const getLocalTodos = () => {}
+30 - Create a new function: const getLocalTodos = () => {}
      // Copy paste of the 'if' saveLocalTodos function content part but modifying the 'else' part
+     
 ==> when we save to localTodos, we save and push what we have in our state
 ==> when we get the localTodos, we have to check if we have stg. If not: empty [], if yes: get it and push it to the state
 
