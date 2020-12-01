@@ -19,8 +19,6 @@ const Todo = ({ text, todo, todos, setTodos }) => {
         //if !todo.id.completed, then decrement again, otherwise not 
         setTodos(todos.map((item => {
             if(item.id === todo.id){
-                console.log(item);
-                
                 return {
                     ...item, completed: !item.completed
                     }
